@@ -29,3 +29,14 @@
 .prod {
   text-decoration: none;
 }
+.text {
+  text-align: center;
+  line-height: 38px;
+}
+.aboutProduct {
+  height: 250px;
+  border-radius: 10px;
+}
+.aboutImgDiv {
+  height: 80%;
+}
