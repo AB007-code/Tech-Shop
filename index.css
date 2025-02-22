@@ -24,4 +24,8 @@
 }
 .dscrptnDiv {
   height: 100px;
+  margin: 0px 10px;
+}
+.prod {
+  text-decoration: none;
 }
