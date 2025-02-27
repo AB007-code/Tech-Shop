@@ -51,16 +51,11 @@ homeBtn.addEventListener("click", () => {
 });
 
 allBtn.addEventListener("click", () => {
-  // let list1 = document.querySelectorAll(".cold");
-  // list1.forEach((ele) => {
-  //   row1.removeChild(ele);
-  // });
   productDiv.removeChild(productDiv.firstElementChild);
   productList(arr);
 });
 
 mBtn.addEventListener("click", () => {
-  // let list1 = document.querySelectorAll(".cold");
   productDiv.removeChild(productDiv.firstElementChild);
   let arr2 = arr.filter((ele, i) => {
     if (ele.category == "men's clothing") {
@@ -71,7 +66,6 @@ mBtn.addEventListener("click", () => {
 });
 
 wBtn.addEventListener("click", () => {
-  // let list1 = document.querySelectorAll(".cold");
   productDiv.removeChild(productDiv.firstElementChild);
   let arr2 = arr.filter((ele, i) => {
     if (ele.category == "women's clothing") {
@@ -82,7 +76,6 @@ wBtn.addEventListener("click", () => {
 });
 
 jBtn.addEventListener("click", () => {
-  // let list1 = document.querySelectorAll(".cold");
   productDiv.removeChild(productDiv.firstElementChild);
   let arr2 = arr.filter((ele, i) => {
     if (ele.category == "jewelery") {
@@ -93,7 +86,6 @@ jBtn.addEventListener("click", () => {
 });
 
 eBtn.addEventListener("click", () => {
-  // let list1 = document.querySelectorAll(".cold");
   productDiv.removeChild(productDiv.firstElementChild);
   let arr2 = arr.filter((ele, i) => {
     if (ele.category == "electronics") {
