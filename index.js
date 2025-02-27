@@ -1,4 +1,4 @@
-let row1 = document.querySelector(".row1");
+let productDiv = document.querySelector(".productDiv");
 let homeBtn = document.querySelector(".homeBtn");
 let productBtn = document.querySelector(".productBtn");
 let allBtn = document.querySelector(".allBtn");
@@ -19,6 +19,8 @@ getProduct();
 console.log(arr);
 function productList(arr1) {
   //Make a function for adding the item in a row according to the array condition.
+  let rowDiv = document.createElement("div");
+  rowDiv.className = "row row-cols-3 g-4 mt-1 row1 justify-content-center";
   let i = 0;
   arr1.map((ele) => {
     let x = ele.title.slice(0, 12);
@@ -38,9 +40,10 @@ function productList(arr1) {
             </div>
           </div>`;
     colDiv.innerHTML = col;
-    row1.appendChild(colDiv);
+    rowDiv.appendChild(colDiv);
     i++;
   });
+  productDiv.appendChild(rowDiv);
 }
 
 homeBtn.addEventListener("click", () => {
@@ -48,21 +51,54 @@ homeBtn.addEventListener("click", () => {
 });
 
 allBtn.addEventListener("click", () => {
-  let list1 = document.querySelectorAll(".cold");
-  list1.forEach((ele) => {
-    row1.removeChild(ele);
-  });
+  // let list1 = document.querySelectorAll(".cold");
+  // list1.forEach((ele) => {
+  //   row1.removeChild(ele);
+  // });
+  productDiv.removeChild(productDiv.firstElementChild);
   productList(arr);
 });
+
 mBtn.addEventListener("click", () => {
-  let list1 = document.querySelectorAll(".cold");
+  // let list1 = document.querySelectorAll(".cold");
+  productDiv.removeChild(productDiv.firstElementChild);
   let arr2 = arr.filter((ele, i) => {
     if (ele.category == "men's clothing") {
       return ele;
-    } else {
-      row1.removeChild(list1[i]);
     }
   });
   productList(arr2);
 });
-// productBtn.addEventListener("click", () => {});
+
+wBtn.addEventListener("click", () => {
+  // let list1 = document.querySelectorAll(".cold");
+  productDiv.removeChild(productDiv.firstElementChild);
+  let arr2 = arr.filter((ele, i) => {
+    if (ele.category == "women's clothing") {
+      return ele;
+    }
+  });
+  productList(arr2);
+});
+
+jBtn.addEventListener("click", () => {
+  // let list1 = document.querySelectorAll(".cold");
+  productDiv.removeChild(productDiv.firstElementChild);
+  let arr2 = arr.filter((ele, i) => {
+    if (ele.category == "jewelery") {
+      return ele;
+    }
+  });
+  productList(arr2);
+});
+
+eBtn.addEventListener("click", () => {
+  // let list1 = document.querySelectorAll(".cold");
+  productDiv.removeChild(productDiv.firstElementChild);
+  let arr2 = arr.filter((ele, i) => {
+    if (ele.category == "electronics") {
+      return ele;
+    }
+  });
+  productList(arr2);
+});
