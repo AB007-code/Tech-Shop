@@ -6,6 +6,7 @@ let mBtn = document.querySelector(".mBtn");
 let wBtn = document.querySelector(".wBtn");
 let jBtn = document.querySelector(".jBtn");
 let eBtn = document.querySelector(".eBtn");
+let detail = document.querySelector(".detail");
 let arr = [];
 const getProduct = async () => {
   let res = await fetch("https://fakestoreapi.com/products");
@@ -16,7 +17,6 @@ const getProduct = async () => {
   });
 };
 getProduct();
-console.log(arr);
 function productList(arr1) {
   //Make a function for adding the item in a row according to the array condition.
   let rowDiv = document.createElement("div");
@@ -35,7 +35,7 @@ function productList(arr1) {
             <div class="dscrptnDiv">${y}</div>
             <div class="border-top border-bottom py-1 fs-3 priceDiv">$ ${ele.price}</div>
             <div class="p-1">
-              <button class="btn btn-dark">Details</button>
+              <a  class="prod text-white detail btn btn-dark" id=${ele.id} target="_self">Details</a>
               <button class="btn btn-dark">Add to Cart</button>
             </div>
           </div>`;
@@ -94,3 +94,20 @@ eBtn.addEventListener("click", () => {
   });
   productList(arr2);
 });
+
+// click on detail
+
+let detailhandeler = async (e) => {
+  if (e.target.textContent == "Details") {
+    let res = await fetch(`https://fakestoreapi.com/products/${e.target.id}`);
+    let data = await res.json();
+    e.target.href = "./detail.html";
+    localStorage.setItem("category", `${data.category}`);
+    localStorage.setItem("title", `${data.title}`);
+    localStorage.setItem("rate", `${data.rating.rate}`);
+    localStorage.setItem("price", `${data.price}`);
+    localStorage.setItem("description", `${data.description}`);
+    localStorage.setItem("image", `${data.image}`);
+  }
+};
+productDiv.addEventListener("click", detailhandeler);

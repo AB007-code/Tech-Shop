@@ -43,3 +43,11 @@
 textarea {
   height: 100px;
 }
+.description {
+  line-height: 25px;
+  letter-spacing: 0.5px;
+}
+.title {
+  letter-spacing: 0.4px;
+  line-height: 48px;
+}
