@@ -54,3 +54,18 @@ textarea {
 .divImg {
   height: 200px;
 }
+/* .font {
+  width: 45%;
+  font-weight: 10px;
+} */
+.scrol {
+  animation: scrolling 10s linear infinite;
+}
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

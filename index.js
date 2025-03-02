@@ -7,6 +7,9 @@ let wBtn = document.querySelector(".wBtn");
 let jBtn = document.querySelector(".jBtn");
 let eBtn = document.querySelector(".eBtn");
 let detail = document.querySelector(".detail");
+let cart = document.querySelector(".cart");
+let value = 0;
+cart.textContent = `Cart(${value})`;
 let arr = [];
 const getProduct = async () => {
   let res = await fetch("https://fakestoreapi.com/products");
@@ -35,8 +38,8 @@ function productList(arr1) {
             <div class="dscrptnDiv">${y}</div>
             <div class="border-top border-bottom py-1 fs-3 priceDiv">$ ${ele.price}</div>
             <div class="p-1">
-              <a  class="prod text-white detail btn btn-dark" id=${ele.id} target="_self">Details</a>
-              <button class="btn btn-dark">Add to Cart</button>
+              <a  class="prod text-white detail btn btn-dark" id="${ele.id}" target="_self">Details</a>
+              <button class="btn btn-dark addBtn" id="${ele.id}">Add to Cart</button>
             </div>
           </div>`;
     colDiv.innerHTML = col;
@@ -94,13 +97,13 @@ eBtn.addEventListener("click", () => {
   });
   productList(arr2);
 });
-
+console.log(value);
 // click on detail
-
+let obj = {};
 let detailhandeler = async (e) => {
+  let res = await fetch(`https://fakestoreapi.com/products/${e.target.id}`);
+  let data = await res.json();
   if (e.target.textContent == "Details") {
-    let res = await fetch(`https://fakestoreapi.com/products/${e.target.id}`);
-    let data = await res.json();
     e.target.href = "./detail.html";
     localStorage.setItem("category", `${data.category}`);
     localStorage.setItem("title", `${data.title}`);
@@ -109,5 +112,20 @@ let detailhandeler = async (e) => {
     localStorage.setItem("description", `${data.description}`);
     localStorage.setItem("image", `${data.image}`);
   }
+  if (e.target.textContent == "Add to Cart") {
+    let a = data.id;
+    if (Object.hasOwn(obj, `${a}`)) {
+      obj[a]++;
+      value = value;
+    } else {
+      obj[a] = 1;
+      value++;
+    }
+    cart.textContent = `Cart(${value})`;
+  }
 };
 productDiv.addEventListener("click", detailhandeler);
+
+productBtn.addEventListener("click", () => {
+  productBtn.href = "./product.html";
+});
