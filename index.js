@@ -8,8 +8,8 @@ let jBtn = document.querySelector(".jBtn");
 let eBtn = document.querySelector(".eBtn");
 let detail = document.querySelector(".detail");
 let cart = document.querySelector(".cart");
-let value = 0;
-cart.textContent = `Cart(${value})`;
+// let value = 0;
+// cart.textContent = `Cart(${value})`;
 let arr = [];
 const getProduct = async () => {
   let res = await fetch("https://fakestoreapi.com/products");
@@ -97,9 +97,17 @@ eBtn.addEventListener("click", () => {
   });
   productList(arr2);
 });
-console.log(value);
-// click on detail
-let obj = {};
+
+let value;
+let obj;
+if (Object.keys(JSON.parse(localStorage.obj2)).length) {
+  obj = JSON.parse(localStorage.obj2);
+  value = Object.keys(JSON.parse(localStorage.obj2)).length;
+} else {
+  obj = {};
+  value = 0;
+}
+cart.textContent = `Cart(${value})`;
 let detailhandeler = async (e) => {
   let res = await fetch(`https://fakestoreapi.com/products/${e.target.id}`);
   let data = await res.json();
@@ -128,4 +136,5 @@ productDiv.addEventListener("click", detailhandeler);
 
 productBtn.addEventListener("click", () => {
   productBtn.href = "./product.html";
+  localStorage.setItem("obj1", `${JSON.stringify(obj)}`);
 });
