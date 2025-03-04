@@ -8,8 +8,7 @@ let jBtn = document.querySelector(".jBtn");
 let eBtn = document.querySelector(".eBtn");
 let detail = document.querySelector(".detail");
 let cart = document.querySelector(".cart");
-// let value = 0;
-// cart.textContent = `Cart(${value})`;
+let prod = document.querySelector(".prod");
 let arr = [];
 const getProduct = async () => {
   let res = await fetch("https://fakestoreapi.com/products");
@@ -97,12 +96,12 @@ eBtn.addEventListener("click", () => {
   });
   productList(arr2);
 });
-
+// Object.keys(JSON.parse(localStorage.obj1)).length
 let value;
 let obj;
-if (Object.keys(JSON.parse(localStorage.obj2)).length) {
-  obj = JSON.parse(localStorage.obj2);
-  value = Object.keys(JSON.parse(localStorage.obj2)).length;
+if (localStorage.obj1) {
+  obj = JSON.parse(localStorage.obj1);
+  value = Object.keys(JSON.parse(localStorage.obj1)).length;
 } else {
   obj = {};
   value = 0;
@@ -119,6 +118,8 @@ let detailhandeler = async (e) => {
     localStorage.setItem("price", `${data.price}`);
     localStorage.setItem("description", `${data.description}`);
     localStorage.setItem("image", `${data.image}`);
+    localStorage.setItem("id", `${data.id}`);
+    localStorage.setItem("obj1", `${JSON.stringify(obj)}`);
   }
   if (e.target.textContent == "Add to Cart") {
     let a = data.id;
@@ -136,5 +137,8 @@ productDiv.addEventListener("click", detailhandeler);
 
 productBtn.addEventListener("click", () => {
   productBtn.href = "./product.html";
+  localStorage.setItem("obj1", `${JSON.stringify(obj)}`);
+});
+prod.addEventListener("click", () => {
   localStorage.setItem("obj1", `${JSON.stringify(obj)}`);
 });

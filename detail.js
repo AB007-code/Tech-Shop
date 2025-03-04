@@ -5,6 +5,12 @@ let price = document.querySelector(".price");
 let description = document.querySelector(".description");
 let detaiImg = document.querySelector(".detaiImg");
 let carousl = document.querySelector(".carousl");
+let addBtn = document.querySelector(".addBtn");
+let cart = document.querySelector(".cart");
+let prod = document.querySelector(".prod");
+let productBtn = document.querySelector(".productBtn");
+let a = localStorage.id;
+console.log(a);
 category.textContent = `${localStorage.category.toUpperCase()}`;
 title.textContent = `${localStorage.title}`;
 rate.textContent = `${localStorage.rate} ★`;
@@ -49,4 +55,35 @@ carousl.addEventListener("click", (e) => {
       detaiImg.src = `${ele.image}`;
     }
   });
+});
+let value;
+let obj;
+// console.log(Object.keys(JSON.parse(localStorage.obj1)).length);
+console.log(JSON.parse(localStorage.obj1));
+if (Object.keys(JSON.parse(localStorage.obj1)).length) {
+  obj = JSON.parse(localStorage.obj1);
+  value = Object.keys(JSON.parse(localStorage.obj1)).length;
+} else {
+  obj = {};
+  value = 0;
+}
+cart.textContent = `Cart(${value})`;
+let detailhandeler = () => {
+  let a = localStorage.id;
+  console.log(a);
+  if (Object.hasOwn(obj, `${a}`)) {
+    obj[a]++;
+    value = value;
+  } else {
+    obj[a] = 1;
+    value++;
+  }
+  cart.textContent = `Cart(${value})`;
+};
+addBtn.addEventListener("click", detailhandeler);
+prod.addEventListener("click", () => {
+  localStorage.setItem("obj1", JSON.stringify(obj));
+});
+productBtn.addEventListener("click", () => {
+  localStorage.setItem("obj1", JSON.stringify(obj));
 });

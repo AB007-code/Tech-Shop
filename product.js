@@ -110,6 +110,8 @@ let detailhandeler = async (e) => {
     localStorage.setItem("price", `${data.price}`);
     localStorage.setItem("description", `${data.description}`);
     localStorage.setItem("image", `${data.image}`);
+    localStorage.setItem("id", `${data.id}`);
+    localStorage.setItem("obj1", `${JSON.stringify(obj)}`);
   }
   if (e.target.textContent == "Add to Cart") {
     let a = data.id;
@@ -127,5 +129,8 @@ productDiv.addEventListener("click", detailhandeler);
 
 homeBtn.addEventListener("click", () => {
   //   homeBtn.href = "./index.html";
-  localStorage.setItem("obj2", `${JSON.stringify(obj)}`);
+  localStorage.setItem("obj1", `${JSON.stringify(obj)}`);
+});
+productBtn.addEventListener("click", () => {
+  localStorage.setItem("obj1", `${JSON.stringify(obj)}`);
 });
