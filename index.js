@@ -9,6 +9,8 @@ let eBtn = document.querySelector(".eBtn");
 let detail = document.querySelector(".detail");
 let cart = document.querySelector(".cart");
 let prod = document.querySelector(".prod");
+let aboutBtn = document.querySelector(".aboutBtn");
+let prod1 = document.querySelector(".prod1");
 let arr = [];
 const getProduct = async () => {
   let res = await fetch("https://fakestoreapi.com/products");
@@ -141,4 +143,15 @@ productBtn.addEventListener("click", () => {
 });
 prod.addEventListener("click", () => {
   localStorage.setItem("obj1", `${JSON.stringify(obj)}`);
+});
+
+aboutBtn.addEventListener("click", () => {
+  localStorage.setItem("value1", `${value}`);
+});
+prod1.addEventListener("click", () => {
+  localStorage.setItem("value1", `${value}`);
+});
+cart.addEventListener("click", () => {
+  localStorage.setItem("obj1", `${JSON.stringify(obj)}`);
+  localStorage.setItem("dataArr", `${JSON.stringify(arr)}`);
 });

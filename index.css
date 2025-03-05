@@ -69,3 +69,14 @@ textarea {
     transform: translateX(-100%);
   }
 }
+.color1 {
+  background-color: rgb(243, 237, 237);
+}
+.childDiv {
+  height: 130px;
+}
+.eleImg {
+  object-fit: contain;
+  width: 50%;
+  height: 100%;
+}

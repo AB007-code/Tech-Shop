@@ -10,6 +10,8 @@ let detail = document.querySelector(".detail");
 let cart = document.querySelector(".cart");
 let obj = JSON.parse(localStorage.obj1);
 let value = Object.keys(obj).length;
+let prod1 = document.querySelector(".prod1");
+let aboutBtn = document.querySelector(".aboutBtn");
 cart.textContent = `Cart(${value})`;
 let arr = [];
 const getProduct = async () => {
@@ -132,5 +134,14 @@ homeBtn.addEventListener("click", () => {
   localStorage.setItem("obj1", `${JSON.stringify(obj)}`);
 });
 productBtn.addEventListener("click", () => {
+  localStorage.setItem("obj1", `${JSON.stringify(obj)}`);
+});
+aboutBtn.addEventListener("click", () => {
+  localStorage.setItem("value1", `${value}`);
+});
+prod1.addEventListener("click", () => {
+  localStorage.setItem("obj1", `${JSON.stringify(obj)}`);
+});
+cart.addEventListener("click", () => {
   localStorage.setItem("obj1", `${JSON.stringify(obj)}`);
 });
