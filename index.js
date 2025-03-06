@@ -147,6 +147,8 @@ prod.addEventListener("click", () => {
 
 aboutBtn.addEventListener("click", () => {
   localStorage.setItem("value1", `${value}`);
+  localStorage.setItem("obj1", `${JSON.stringify(obj)}`);
+  localStorage.setItem("dataArr", `${JSON.stringify(arr)}`);
 });
 prod1.addEventListener("click", () => {
   localStorage.setItem("value1", `${value}`);

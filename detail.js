@@ -82,10 +82,10 @@ let detailhandeler = () => {
 };
 addBtn.addEventListener("click", detailhandeler);
 prod.addEventListener("click", () => {
-  localStorage.setItem("obj1", JSON.stringify(obj));
+  localStorage.setItem("obj1", `${JSON.stringify(obj)}`);
 });
 productBtn.addEventListener("click", () => {
-  localStorage.setItem("obj1", JSON.stringify(obj));
+  localStorage.setItem("obj1", `${JSON.stringify(obj)}`);
 });
 cart.addEventListener("click", () => {
   localStorage.setItem("obj1", `${JSON.stringify(obj)}`);

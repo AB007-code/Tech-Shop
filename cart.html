@@ -31,7 +31,12 @@
             >
           </button>
 
-          <a class="btn productBtn prod text-black" target="_self">Products</a>
+          <a
+            href="./product.html"
+            class="btn productBtn prod text-black"
+            target="_self"
+            >Products</a
+          >
 
           <button class="btn aboutBtn">
             <a href="./about.html" class="prod text-black" target="_self"
@@ -47,16 +52,17 @@
         <div
           class="column d-flex flex-wrap justify-content-around align-content-center"
         >
-          <button class="btn border-black">
-            <a href="./login.html" class="prod text-black"
-              ><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</a
-            >
-          </button>
-          <button class="btn border-black">
-            <a href="./register.html" class="prod text-black"
-              ><i class="fa-solid fa-arrow-right-to-bracket"></i> Register</a
-            >
-          </button>
+          <a
+            href="./login.html"
+            class="btn border-black loginBtn prod text-black"
+            ><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</a
+          >
+
+          <a
+            href="./register.html"
+            class="btn border-black registerBtn prod text-black"
+            ><i class="fa-solid fa-arrow-right-to-bracket"></i> Register</a
+          >
 
           <a class="btn border-black cart" href="./cart.html"
             ><i class="fa-solid fa-cart-plus"></i> Cart(${0})</a
@@ -70,7 +76,7 @@
       <hr />
     </section>
 
-    <section class="container mt-5 p-3">
+    <section class="container mt-5 p-3 sectionDiv">
       <div class="row row-cols-2 gx-4">
         <div class="w-75">
           <div class="border cartDiv rounded"></div>

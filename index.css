@@ -73,10 +73,13 @@ textarea {
   background-color: rgb(243, 237, 237);
 }
 .childDiv {
-  height: 130px;
+  height: 150px;
 }
 .eleImg {
   object-fit: contain;
   width: 50%;
   height: 100%;
+}
+.cartMargin {
+  margin: 0px 80px;
 }
