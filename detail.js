@@ -9,6 +9,7 @@ let addBtn = document.querySelector(".addBtn");
 let cart = document.querySelector(".cart");
 let prod = document.querySelector(".prod");
 let productBtn = document.querySelector(".productBtn");
+let gotocart = document.querySelector(".gotocart");
 let a = localStorage.id;
 console.log(a);
 category.textContent = `${localStorage.category.toUpperCase()}`;
@@ -88,5 +89,9 @@ productBtn.addEventListener("click", () => {
   localStorage.setItem("obj1", `${JSON.stringify(obj)}`);
 });
 cart.addEventListener("click", () => {
+  localStorage.setItem("obj1", `${JSON.stringify(obj)}`);
+});
+gotocart.addEventListener("click", () => {
+  gotocart.href = "./cart.html";
   localStorage.setItem("obj1", `${JSON.stringify(obj)}`);
 });

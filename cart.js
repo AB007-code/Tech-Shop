@@ -96,7 +96,10 @@ if (val) {
   btnDiv.innerHTML = btn;
   priceDiv.appendChild(btnDiv);
 } else {
-  cartDiv.textContent = "Data Not Found";
+  // cartDiv.textContent = "Data Not Found";
+  sectionDiv.textContent = "Cart is empty";
+  sectionDiv.style.border = "none";
+  sectionDiv.className = "fs-3 text-center text-danger";
 }
 
 console.log(total);
@@ -168,7 +171,7 @@ productBtn.addEventListener("click", () => {
   localStorage.setItem("obj1", `${JSON.stringify(obj)}`);
 });
 aboutBtn.addEventListener("click", () => {
-  localStorage.setItem("obj1", `${JSON.stringify(obj)}`);
+  localStorage.setItem("value1", `${Object.keys(obj).length}`);
 });
 contactBtn.addEventListener("click", () => {
   localStorage.setItem("value1", `${Object.keys(obj).length}`);

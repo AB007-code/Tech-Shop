@@ -18,102 +18,140 @@
   </head>
   <body>
     <header class="container mt-3">
-        <div class="row row-cols-3">
-          <div class="column">
-            <h1>Ecommerce</h1>
-          </div>
-          <div
-            class="column d-flex flex-wrap justify-content-around align-content-center"
+      <div class="row row-cols-3">
+        <div class="column">
+          <h1>Ecommerce</h1>
+        </div>
+        <div
+          class="column d-flex flex-wrap justify-content-around align-content-center"
+        >
+          <button class="btn homeBtn">
+            <a href="./index.html" class="prod text-black" target="_self"
+              >Home</a
+            >
+          </button>
+          <button class="btn productBtn">
+            <a href="./product.html" class="prod text-black" target="_self"
+              >Products</a
+            >
+          </button>
+          <a
+            href="./about.html"
+            class="btn aboutBtn prod text-black"
+            target="_self"
+            >About</a
           >
-            <button class="btn homeBtn"><a href="./index.html" class="prod text-black" target="_self"
-                >Home</a
-              ></button>
-            <button class="btn productBtn">
-              <a href="./product.html" class="prod text-black target="_self">Products</a>
-            </button>
-            <button class="btn aboutBtn"><a href="./about.html" class="prod text-black" target="_self"
-                >About</a
-              ></button>
-            <button class="btn contactBtn">
-              <a href="./contact.html" class="prod text-black" target="_self"
+          <button class="btn contactBtn">
+            <a href="./contact.html" class="prod text-black" target="_self"
               >Contact</a
             >
-            </button>
-          </div>
-          <div
-            class="column d-flex flex-wrap justify-content-around align-content-center"
-          >
-            <button class="btn border-black">
-              <a href="./login.html" class="prod text-black"
+          </button>
+        </div>
+        <div
+          class="column d-flex flex-wrap justify-content-around align-content-center"
+        >
+          <button class="btn border-black">
+            <a href="./login.html" class="prod text-black"
               ><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</a
             >
-            </button>
-            <button class="btn border-black">
-              <a href="./register.html" class="prod text-black"
+          </button>
+          <button class="btn border-black">
+            <a href="./register.html" class="prod text-black"
               ><i class="fa-solid fa-arrow-right-to-bracket"></i> Register</a
             >
-            </button>
-            <a class="btn border-black cart" href="./cart.html"
+          </button>
+          <a class="btn border-black cart" href="./cart.html"
             ><i class="fa-solid fa-cart-plus"></i> Cart(${0})</a
           >
+        </div>
+      </div>
+    </header>
+
+    <section class="mt-5 text-center">
+      <label class="fs-1 fw-bold">About Us</label>
+      <hr class="container" />
+    </section>
+
+    <section class="mt-4">
+      <div class="container fs-4 text text-secondary">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a
+          nulla ex. Cras a egestas odio. Integer fermentum libero ut convallis
+          ultrices. Phasellus a dapibus arcu, eu consequat diam. Suspendisse
+          fermentum magna nec facilisis ornare. Nam feugiat nisi quis diam
+          dictum finibus. Vestibulum vitae tortor hendrerit, dignissim metus et,
+          bibendum lorem. Sed nec vestibulum lectus. Aliquam gravida arcu
+          fringilla, volutpat arcu in, feugiat dui. Integer quis nisl eleifend,
+          congue lorem sed, aliquam purus. Donec sollicitudin velit et lorem
+          tincidunt, a egestas libero pellentesque. Nam sodales congue ante, nec
+          malesuada ligula aliquet sagittis. Nulla at odio vulputate, vestibulum
+          ante non, rutrum erat. Sed sollicitudin leo nec arcu dictum, quis
+          molestie orci aliquet. Curabitur suscipit varius quam, eget vulputate
+          tellus sagittis eget. Curabitur euismod nisl eu viverra volutpat.
+        </p>
+      </div>
+    </section>
+
+    <section class="mt-5 text-center">
+      <label class="fs-2 fw-semibold">Our Products</label>
+    </section>
+
+    <section class="mt-5">
+      <div class="container text-center">
+        <div class="row gx-5">
+          <div class="col-3">
+            <div class="border aboutProduct">
+              <div class="aboutImgDiv">
+                <img
+                  src="./assets/shoes.jpeg"
+                  class="h-100 w-100 rounded-top"
+                />
+              </div>
+              <div class="fs-4 mt-1 fw-semibold">Men's Clothing</div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="border aboutProduct">
+              <div class="aboutImgDiv">
+                <img
+                  src="./assets/cloth.jpeg"
+                  class="h-100 w-100 rounded-top"
+                />
+              </div>
+              <div class="fs-4 mt-1 fw-semibold">Women's Clothing</div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="border aboutProduct">
+              <div class="aboutImgDiv">
+                <img src="./assets/ring.webp" class="h-100 w-100 rounded-top" />
+              </div>
+              <div class="fs-4 mt-1 fw-semibold">Jewelery</div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="border aboutProduct">
+              <div class="aboutImgDiv">
+                <img
+                  src="./assets/office.jpeg"
+                  class="h-100 w-100 rounded-top"
+                />
+              </div>
+              <div class="fs-4 mt-1 fw-semibold">Electronics</div>
+            </div>
           </div>
         </div>
-      </header>
+      </div>
+    </section>
 
-      <section class="mt-5 text-center">
-        <label class="fs-1 fw-bold">About Us</label>
-        <hr class="container" />
-      </section>
-
-      <section class="mt-4">
-        <div class="container fs-4 text text-secondary">
-           <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a nulla ex. Cras a egestas odio. Integer fermentum libero ut convallis ultrices. Phasellus a dapibus arcu, eu consequat diam. Suspendisse fermentum magna nec facilisis ornare. Nam feugiat nisi quis diam dictum finibus. Vestibulum vitae tortor hendrerit, dignissim metus et, bibendum lorem. Sed nec vestibulum lectus. Aliquam gravida arcu fringilla, volutpat arcu in, feugiat dui. Integer quis nisl eleifend, congue lorem sed, aliquam purus. Donec sollicitudin velit et lorem tincidunt, a egestas libero pellentesque. Nam sodales congue ante, nec malesuada ligula aliquet sagittis. Nulla at odio vulputate, vestibulum ante non, rutrum erat. Sed sollicitudin leo nec arcu dictum, quis molestie orci aliquet. Curabitur suscipit varius quam, eget vulputate tellus sagittis eget. Curabitur euismod nisl eu viverra volutpat.</p>
-        </div>
-      </section>
-
-      <section class="mt-5 text-center">
-        <label class="fs-2 fw-semibold">Our Products</label>
-      </section>
-
-      <section class="mt-5">
-        <div class="container text-center">
-            <div class="row gx-5">
-                <div class="col-3">
-                    <div class="border aboutProduct">
-                        <div class="aboutImgDiv"><img src="./assets/shoes.jpeg" class="h-100 w-100 rounded-top"/></div>
-                        <div class="fs-4 mt-1 fw-semibold">Men's Clothing</div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="border aboutProduct">
-                        <div class="aboutImgDiv"><img src="./assets/cloth.jpeg" class="h-100 w-100 rounded-top"/></div>
-                        <div class="fs-4 mt-1 fw-semibold">Women's Clothing</div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="border aboutProduct">
-                        <div class="aboutImgDiv"><img src="./assets/ring.webp" class="h-100 w-100 rounded-top"/></div>
-                        <div class="fs-4 mt-1 fw-semibold">Jewelery</div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="border aboutProduct">
-                        <div class="aboutImgDiv"><img src="./assets/office.jpeg" class="h-100 w-100 rounded-top"/></div>
-                        <div class="fs-4 mt-1 fw-semibold">Electronics</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </section>
-
-      <footer class="mt-5 text-center">
-        <h5 class="p-0">Made with by Abhilash Chaurasiya</h5>
-      </footer>
-      <script src="./about.js"></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"
-  ></script>
+    <footer class="mt-5 text-center">
+      <h5 class="p-0">Made with by Abhilash Chaurasiya</h5>
+    </footer>
+    <script src="./about.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
