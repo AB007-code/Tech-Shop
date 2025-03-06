@@ -109,40 +109,44 @@ cartDiv.addEventListener("click", (e) => {
     let rowEleId1 = e.target.closest(".childDiv").id;
     if (obj.hasOwnProperty(`${rowEleId1}`)) {
       obj[rowEleId1]++;
-      let total1 = 0;
-      arr1.map((ele) => {
-        if (obj.hasOwnProperty(`${ele.id}`)) {
-          total1 += ele.price * obj[ele.id];
-          priceDiv.children[1].children[1].textContent = `$${Math.floor(
-            total1
-          )}`;
-          priceDiv.children[3].children[1].textContent = `$${Math.floor(
-            total1 + shipCost
-          )}`;
-          e.target.parentElement.parentElement.children[1].children[0].textContent = `${obj[rowEleId1]}*$${ele.price}`;
+      let price;
+      for (let i = 0; i < arr1.length; i++) {
+        if (arr1[i].id == rowEleId1) {
+          price = arr1[i].price;
+          console.log(arr1[i].price);
+          total += price;
         }
-      });
+      }
+
+      priceDiv.children[1].children[1].textContent = `$${Math.floor(total)}`;
+      priceDiv.children[3].children[1].textContent = `$${Math.floor(
+        total + shipCost
+      )}`;
+      e.target.parentElement.parentElement.children[1].children[0].textContent = `${obj[rowEleId1]}*$${price}`;
+
       e.target.parentElement.children[1].textContent = `${obj[rowEleId1]}`;
     }
     console.log(obj);
   } else if (e.target.textContent == "-") {
     let rowEleId = e.target.closest(".childDiv").id;
-    console.log(e.target.closest(".childDiv"));
     if (obj.hasOwnProperty(`${rowEleId}`)) {
       obj[rowEleId]--;
-      let total1 = 0;
-      arr1.map((ele) => {
-        if (obj.hasOwnProperty(`${ele.id}`)) {
-          total1 += ele.price * obj[ele.id];
-          priceDiv.children[1].children[1].textContent = `$${Math.floor(
-            total1
-          )}`;
-          priceDiv.children[3].children[1].textContent = `$${Math.floor(
-            total1 + shipCost
-          )}`;
-          e.target.parentElement.parentElement.children[1].children[0].textContent = `${obj[rowEleId]}*$${ele.price}`;
+      let price;
+      for (let i = 0; i < arr1.length; i++) {
+        console.log(rowEleId);
+        if (arr1[i].id == rowEleId) {
+          price = arr1[i].price;
+          console.log(arr1[i].price);
+          total -= price;
         }
-      });
+      }
+      priceDiv.children[1].children[1].textContent = `$${Math.floor(total)}`;
+      priceDiv.children[3].children[1].textContent = `$${Math.floor(
+        total + shipCost
+      )}`;
+
+      e.target.parentElement.parentElement.children[1].children[0].textContent = `${obj[rowEleId]}*$${price}`;
+
       e.target.parentElement.children[1].textContent = `${obj[rowEleId]}`;
       if (obj[rowEleId] == 0) {
         e.target.closest(".container1").remove();
@@ -177,8 +181,10 @@ contactBtn.addEventListener("click", () => {
   localStorage.setItem("value1", `${Object.keys(obj).length}`);
 });
 loginBtn.addEventListener("click", () => {
+  localStorage.setItem("value1", `${Object.keys(obj).length}`);
   localStorage.setItem("obj1", `${JSON.stringify(obj)}`);
 });
 registerBtn.addEventListener("click", () => {
+  localStorage.setItem("value1", `${Object.keys(obj).length}`);
   localStorage.setItem("obj1", `${JSON.stringify(obj)}`);
 });

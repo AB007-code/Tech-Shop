@@ -144,4 +144,5 @@ prod1.addEventListener("click", () => {
 });
 cart.addEventListener("click", () => {
   localStorage.setItem("obj1", `${JSON.stringify(obj)}`);
+  localStorage.setItem("value1", `${value}`);
 });
